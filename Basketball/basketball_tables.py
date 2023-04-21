@@ -1,7 +1,7 @@
 # Your name: Vasundhara Kulkarni
 # Your student id: 01211840
 # Your email: kulkvasu@umich.edu
-# List who you have worked with on this project: Gunhaar Panjwani and Megan Su
+# List who you have worked with on this project: Gunhaar Panjwani and Megan Su 
 
 import sqlite3
 import os
