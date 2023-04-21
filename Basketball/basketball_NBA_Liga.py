@@ -14,7 +14,7 @@ import json
 import requests
 
 # For Basketball Sports KEY: 78776eefec674c20ea9530f0e4d0b9cd
-# IMPORTANT NOTE:
+
 
 def open_database(db_name):
     path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
