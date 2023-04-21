@@ -28,12 +28,10 @@ def get_basketball_data():
     response = requests.get(url, headers=headers)
     leagues = response.json()
     id = leagues["response"][0]["id"]
-    # NBA
     leagueName = leagues["response"][0]["name"]
     url2 = f"https://v1.basketball.api-sports.io/standings?league={id}&season=2019-2020"
     response2 = requests.get(url2, headers=headers)
     standings = response2.json()
-    # print(standings)
     standings_dict = {}
     standings_dict[leagueName] = {}
     for i in range(len(standings["response"][0])):

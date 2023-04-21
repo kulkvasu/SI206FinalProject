@@ -28,15 +28,12 @@ def get_basketball_data():
     response = requests.get(url, headers=headers)
     leagues = response.json()
     id = leagues["response"][0]["id"]
-    # NBA
     leagueName = leagues["response"][0]["name"]
     url2 = f"https://v1.basketball.api-sports.io/standings?league={id}&season=2019-2020"
     response2 = requests.get(url2, headers=headers)
     standings = response2.json()
-    # print(standings)
     standings_dict = {}
     standings_dict[leagueName] = {}
-    # Western Conference
     for i in range(len(standings["response"][0])):
         position = standings['response'][0][i]['position']
         teamName = standings['response'][0][i]['team']['name']
@@ -67,7 +64,6 @@ def make_basketball_table(data, cur, conn):
 def main():
     cur, conn = open_database("sports.db")
     data = get_basketball_data()
-    # print(data)
     make_basketball_table(data, cur, conn)
     
 if __name__ == "__main__":
